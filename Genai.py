@@ -22,7 +22,7 @@ If a user asks about a topic unrelated to data science, politely decline.
 """
 
 # 🔹 Initialize the Gemini AI Model
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7, google_api_key=GOOGLE_API_KEY)
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7, api_key="AIzaSyD93jv-nUCK30PGZNJgShG0xI0kYocz_AU")
 
 # 🔹 Function to Manage Chat Memory for Each Session
 def get_session_history(session_id: str):
