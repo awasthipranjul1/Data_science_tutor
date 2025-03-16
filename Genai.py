@@ -1,19 +1,16 @@
 import streamlit as st
-import os
-import uuid  # For generating unique session IDs
+import uuid
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain.memory import ChatMessageHistory
 
-# 🔹 Set Up the AI Tutor System Prompt
 system_prompt = """
 You are an expert Data Science Tutor. Your role is to assist users with data science-related questions only.
 Provide clear, detailed, and accurate explanations, including examples where necessary.
 If a user asks about a topic unrelated to data science, politely decline.
 """
 
-# 🔹 Initialize the Gemini AI Model
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7, api_key="AIzaSyD93jv-nUCK30PGZNJgShG0xI0kYocz_AU")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7, google_api_key="AIzaSyD93jv-nUCK30PGZNJgShG0xI0kYocz_AU")
 
 # 🔹 Function to Manage Chat Memory for Each Session
 def get_session_history(session_id: str):
