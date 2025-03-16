@@ -1,18 +1,9 @@
 import streamlit as st
 import os
 import uuid  # For generating unique session IDs
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain.memory import ChatMessageHistory
-
-# 🔹 Load API Key from .env File
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
-if not GOOGLE_API_KEY:
-    st.error("API key is missing! Please check your .env file.")
-    st.stop()
 
 # 🔹 Set Up the AI Tutor System Prompt
 system_prompt = """
